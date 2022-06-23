@@ -54,8 +54,6 @@ x1 = analogRead(left_X); //read the left X value
 y1 = analogRead(left_Y); //read the left Y value
 z1 = digitalRead(2); // read the left Z value
 
-
-  Serial.println(bValue1);
   //delay(5); // lower the speed overall
 
   // claw
