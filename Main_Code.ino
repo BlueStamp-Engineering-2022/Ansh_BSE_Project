@@ -47,7 +47,7 @@ y2 = analogRead(right_Y); // read the right Y value
 z2 = digitalRead(1); //// read the right Z value
 x1 = analogRead(left_X); //read the left X value
 y1 = analogRead(left_Y); //read the left Y value
-z1 = digitalRead(8); // read the left Z value
+z1 = digitalRead(2); // read the left Z value
 
 
   Serial.println(z1);
