@@ -1,12 +1,13 @@
 //ezButton - Version: Latest 
 #include <ezButton.h>
 #include <Servo.h> // add the servo libraries
-#define SW_PIN  7  // Arduino pin connected to SW  pin
+  // Arduino pin connected to SW  pin
 Servo myservo1; // create servo object to control a servo
 Servo myservo2;
 Servo myservo3;
 Servo myservo4;
-ezButton button(SW_PIN);
+ezButton button(7);
+ezButton button1(8);
 int pos1 = 90, pos2 = 90, pos3 = 90, pos4 = 90; // define the variable of 4 servo angle,and assign the initial value (that is the boot posture
 //angle value)
 const int right_X = A2; // define the right X pin to A2
@@ -18,6 +19,7 @@ const int left_Y = A4; // define the left X pin to A4
 int x1, y1, z1; // define the variable, used to save the joystick value it read.
 int x2, y2, z2;
 int bValue = 0;
+int bValue1 = 0;
 void setup()
 {
   // boot posture
@@ -30,6 +32,7 @@ void setup()
   //pinMode(right_key, 7); // set the right/left key to INPUT
   //pinMode(left_key, 8);
   Serial.begin(9600);
+  button1.setDebounceTime(50);
   button.setDebounceTime(50);
   delay(1000);
  // set the baud rate to 9600
@@ -37,7 +40,9 @@ void setup()
 void loop()
 {
   button.loop();
+  button1.loop();
   bValue = button.getState();
+  bValue1 = button1.getState();
 myservo1.attach(3); // set the control pin of servo 1 to D3  dizuo-servo1-3
 myservo2.attach(5); // set the control pin of servo 2 to D5  arm-servo2-5
 myservo3.attach(6); //set the control pin of servo 3 to D6   lower arm-servo-6
@@ -50,7 +55,7 @@ y1 = analogRead(left_Y); //read the left Y value
 z1 = digitalRead(2); // read the left Z value
 
 
-  Serial.println(z1);
+  Serial.println(bValue1);
   //delay(5); // lower the speed overall
 
   // claw
@@ -70,21 +75,23 @@ z1 = digitalRead(2); // read the left Z value
 void click(){
   if (button.isPressed()) {
   Serial.println("Pressed");
-  myservo1.write(180);
+  myservo1.write(117);
   delay(50);
-  myservo2.write(87);
+  myservo2.write(84);
   delay(50);
-  myservo3.write(114);
+  myservo3.write(96);
   delay(50);
-  myservo4.write(45);
+  myservo4.write(102);
   delay(50);
   }
   
 
-  while (z1 == 1){
+  while (bValue1 == 0){
+    button1.loop();
     Serial.println("While Statement works");
-    z1 = digitalRead(8);
-    
+    bValue1 = button1.getState();
+    delay(1000);
+    Serial.println(bValue1);
   }
   
 }
