@@ -20,7 +20,7 @@ My final milestone is the increased reliability and accuracy of my robot. I amel
 # First Milestone 
  My first milestone was finishing the body for the robotic arm and making and finishing all the wiring so that all the servos in the arm as well as the controller was connected to the robotic arm. I had to use a variety of screws, nuts, spacers and self locking nuts. I had a tough time using the self locking nut as I had initially not known that you need to use a plyer when using self locking nuts, but later realized that the self locking nuts were really convenient as they didn't get loosened when the parts were moving so nothing would fly off.
  
-[![First Milestone](https://res.cloudinary.com/marcomontalbano/image/upload/v1612574117/video_to_markdown/images/youtube--CaCazFBhYKs-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=CaCazFBhYKs "First Milestone"){:target="_blank" rel="noopener"}
+[![First Milestone](https://img.youtube.com/vi/uQFWPI3eDoY/0.jpg)](https://youtu.be/uQFWPI3eDoY) "First Milestone"){:target="_blank" rel="noopener"}
 
 # Starter Project 
 
