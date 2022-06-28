@@ -24,6 +24,11 @@ int motor1pin1 = 10;
 int motor1pin2 = 11;
 int motor2pin1 = 12;
 int motor2pin2 = 13;
+const int trigPin = 4;
+const int echoPin = 2;
+
+float duration, distance;
+
 void setup()
 {
   // boot posture
@@ -43,6 +48,8 @@ void setup()
   pinMode(motor1pin2, OUTPUT);
   pinMode(motor2pin1, OUTPUT);
   pinMode(motor2pin2, OUTPUT);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
  // set the baud rate to 9600
 }
 void loop()
@@ -64,8 +71,18 @@ z1 = digitalRead(2); // read the left Z value
     digitalWrite(motor1pin1, LOW);
     digitalWrite(motor1pin2, LOW);
 
-    digitalWrite(motor2pin1, LOW);
-    digitalWrite(motor2pin2, LOW);
+  digitalWrite(motor2pin1, LOW);
+  digitalWrite(motor2pin2, LOW);
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration*.0343)/2;
+  // Serial.print("Distance: ");
+  //Serial.println(distance);
 
   //delay(5); // lower the speed overall
 
@@ -100,44 +117,42 @@ void click(){
   while (bValue1 == 0){
     button1.loop();
     Serial.println("While Statement works");
-    Serial.println(y2);
     bValue1 = button1.getState();
     delay(500);
     Serial.println(bValue1);
-    x1 = analogRead(left_X); //read the left X value
+    x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
-    z1 = digitalRead(2); // read the left Z value
-    if(x1 > 520){
+    if(x2 > 520){
     digitalWrite(motor1pin1, HIGH);
     digitalWrite(motor1pin2, LOW);
 
     digitalWrite(motor2pin1, LOW);
     digitalWrite(motor2pin2, HIGH);
-    x1 = analogRead(left_X);
+    x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
     delay(5);
     }
-    if(x1 < 500){
+    if(x2 < 500){
     digitalWrite(motor1pin1, LOW);
     digitalWrite(motor1pin2, HIGH);
 
     digitalWrite(motor2pin1, HIGH);
     digitalWrite(motor2pin2, LOW);
     delay(5);  
-    x1 = analogRead(left_X);
+    x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
     }
-    if(y2 < 475){
+    if(y2 > 510){
     digitalWrite(motor1pin1, LOW);
     digitalWrite(motor1pin2, HIGH);
 
     digitalWrite(motor2pin1, LOW);
     digitalWrite(motor2pin2, HIGH);
     delay(5);
-    x1 = analogRead(left_X);
+    x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
     }
-    if(y2 > 510){
+    if(y2 < 475){
     digitalWrite(motor1pin1, HIGH);
     digitalWrite(motor1pin2, LOW);
 
@@ -145,7 +160,7 @@ void click(){
     digitalWrite(motor2pin2, LOW);
     
     delay(5);  
-    x1 = analogRead(left_X);
+    x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
     }
       bValue1 = button1.getState();
@@ -157,6 +172,20 @@ void click(){
 void claw()
 {
   //claw
+  if (distance < 7){
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration*.0343)/2;
+  Serial.print("Distance: ");
+  Serial.println(distance);
+  delay(100);
+  myservo4.write(45);
+  }
   if (x1 < 500) // changed from 50 to 513 if push the left joystick to the right
   {
     pos4 = pos4 + 3;
