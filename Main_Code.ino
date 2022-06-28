@@ -20,6 +20,10 @@ int x1, y1, z1; // define the variable, used to save the joystick value it read.
 int x2, y2, z2;
 int bValue = 0;
 int bValue1 = 0;
+int motor1pin1 = 10;
+int motor1pin2 = 11;
+int motor2pin1 = 12;
+int motor2pin2 = 13;
 void setup()
 {
   // boot posture
@@ -35,6 +39,10 @@ void setup()
   button1.setDebounceTime(50);
   button.setDebounceTime(50);
   delay(1000);
+  pinMode(motor1pin1, OUTPUT);
+  pinMode(motor1pin2, OUTPUT);
+  pinMode(motor2pin1, OUTPUT);
+  pinMode(motor2pin2, OUTPUT);
  // set the baud rate to 9600
 }
 void loop()
@@ -53,6 +61,11 @@ z2 = digitalRead(1); //// read the right Z value
 x1 = analogRead(left_X); //read the left X value
 y1 = analogRead(left_Y); //read the left Y value
 z1 = digitalRead(2); // read the left Z value
+    digitalWrite(motor1pin1, LOW);
+    digitalWrite(motor1pin2, LOW);
+
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, LOW);
 
   //delay(5); // lower the speed overall
 
@@ -87,9 +100,55 @@ void click(){
   while (bValue1 == 0){
     button1.loop();
     Serial.println("While Statement works");
+    Serial.println(y2);
     bValue1 = button1.getState();
-    delay(1000);
+    delay(500);
     Serial.println(bValue1);
+    x1 = analogRead(left_X); //read the left X value
+    y2 = analogRead(right_Y);
+    z1 = digitalRead(2); // read the left Z value
+    if(x1 > 520){
+    digitalWrite(motor1pin1, HIGH);
+    digitalWrite(motor1pin2, LOW);
+
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, HIGH);
+    x1 = analogRead(left_X);
+    y2 = analogRead(right_Y);
+    delay(5);
+    }
+    if(x1 < 500){
+    digitalWrite(motor1pin1, LOW);
+    digitalWrite(motor1pin2, HIGH);
+
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, LOW);
+    delay(5);  
+    x1 = analogRead(left_X);
+    y2 = analogRead(right_Y);
+    }
+    if(y2 < 475){
+    digitalWrite(motor1pin1, LOW);
+    digitalWrite(motor1pin2, HIGH);
+
+    digitalWrite(motor2pin1, LOW);
+    digitalWrite(motor2pin2, HIGH);
+    delay(5);
+    x1 = analogRead(left_X);
+    y2 = analogRead(right_Y);
+    }
+    if(y2 > 510){
+    digitalWrite(motor1pin1, HIGH);
+    digitalWrite(motor1pin2, LOW);
+
+    digitalWrite(motor2pin1, HIGH);
+    digitalWrite(motor2pin2, LOW);
+    
+    delay(5);  
+    x1 = analogRead(left_X);
+    y2 = analogRead(right_Y);
+    }
+      bValue1 = button1.getState();
   }
   
 }
