@@ -117,8 +117,8 @@ void click(){
   while (bValue1 == 0){
     button1.loop();
     Serial.println("While Statement works");
+    Serial.println(y2);
     bValue1 = button1.getState();
-    delay(500);
     Serial.println(bValue1);
     x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
@@ -138,9 +138,9 @@ void click(){
 
     digitalWrite(motor2pin1, HIGH);
     digitalWrite(motor2pin2, LOW);
-    delay(5);  
     x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
+    delay(5);
     }
     if(y2 > 510){
     digitalWrite(motor1pin1, LOW);
@@ -148,9 +148,9 @@ void click(){
 
     digitalWrite(motor2pin1, LOW);
     digitalWrite(motor2pin2, HIGH);
-    delay(5);
     x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
+    delay(5);
     }
     if(y2 < 475){
     digitalWrite(motor1pin1, HIGH);
@@ -159,9 +159,9 @@ void click(){
     digitalWrite(motor2pin1, HIGH);
     digitalWrite(motor2pin2, LOW);
     
-    delay(5);  
     x2 = analogRead(right_X);
     y2 = analogRead(right_Y);
+    delay(5);
     }
       bValue1 = button1.getState();
   }
@@ -172,7 +172,7 @@ void click(){
 void claw()
 {
   //claw
-  if (distance < 7){
+  if (distance < 8){
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
