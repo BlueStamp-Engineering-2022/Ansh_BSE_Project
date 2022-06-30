@@ -26,4 +26,4 @@ My first milestone was finishing the body for the robotic arm and making and fin
 
 My starter project is a motion sensor controlled servo motor. It scans for motion in intervals of a few seconds so that it can determine whether there was motion and if there was motion than the servo will move clockwise if there isn't any motion the servo will move counter clockwise. Initially the servo motor wass a bit finicky, but I was able to adjust its sensitivity by screwing the potentiometer so that it didn't just detect the slightest of motions but also detected the relatively larger motions.
 
-[![Starter Project](https://i.postimg.cc/Gm7ZSkBs/Screenshot-2022-06-30-9-44-58-AM-1.png)](https://youtu.be/dQw4w9WgXcQ "Starter Project"){:target="_blank" rel="noopener"}
+[![Starter Project](https://i.postimg.cc/Gm7ZSkBs/Screenshot-2022-06-30-9-44-58-AM-1.png)](https://youtu.be/dQw4w9WgXcQ "Starter Project")
