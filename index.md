@@ -15,15 +15,15 @@ My final milestone is the increased reliability and accuracy of my robot. I amel
 # Second Milestone
 My second milestone is the code for the robotic arm as now the arm can actually move using both the remote control and my phone. I had to make use of an external battery to provide the servos with enough power, to do this I made use of a 6V battery pack and connected it to the shield allowing for the energy to go to servos and also not back into my computer allowing me to avoid frying my computer. I also added edits to the code that the originally had come with the kit to set a home position that the arm would go to when I clicked down the button on the right controller's joystick.
 
-[![Third Milestone](https://res.cloudinary.com/marcomontalbano/image/upload/v1612574014/video_to_markdown/images/youtube--y3VAmNlER5Y-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=y3VAmNlER5Y&feature=emb_logo "Second Milestone")
+[![Second Milestone](https://img.youtube.com/vi/pfuyu-g972Q/2.jpg)](https://www.youtube.com/watch?v=pfuyu-g972Q "Second Milestone")
 
 # First Milestone 
 My first milestone was finishing the body for the robotic arm and making and finishing all the wiring so that all the servos in the arm as well as the controller was connected to the robotic arm. I had to use a variety of screws, nuts, spacers and self locking nuts. I had a tough time using the self locking nut as I had initially not known that you need to use a plyer when using self locking nuts, but later realized that the self locking nuts were really convenient as they didn't get loosened when the parts were moving so nothing would fly off.
  
-[![First Milestone](https://img.youtube.com/vi/uQFWPI3eDoY/0.jpg)](https://youtu.be/uQFWPI3eDoY) "First Milestone")
+[![First Milestone](https://img.youtube.com/vi/uQFWPI3eDoY/0.jpg)](https://youtu.be/uQFWPI3eDoY "First Milestone")
 
 # Starter Project 
 
-My starter project is a motion sensor controlled servo motor. Which is able to scan for motion in intervals of a few seconds so that it can determine whether there was motion and if there was motion than the servo will move clockwise if there isn't any motion the servo will move counter clockwise. Initially the servo motor wass a bit finicky, but I was able to adjust its sensitivity by screwing the potentiometer so that it didn't just detect the slightest of motions but also detected the relatively larger motions.
+My starter project is a motion sensor controlled servo motor. It scans for motion in intervals of a few seconds so that it can determine whether there was motion and if there was motion than the servo will move clockwise if there isn't any motion the servo will move counter clockwise. Initially the servo motor wass a bit finicky, but I was able to adjust its sensitivity by screwing the potentiometer so that it didn't just detect the slightest of motions but also detected the relatively larger motions.
 
 [![Starter Project](https://i3.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg)](https://youtu.be/dQw4w9WgXcQ "Starter Project"){:target="_blank" rel="noopener"}
