@@ -20,6 +20,14 @@ My second milestone is the code for the robotic arm as now the arm can actually 
 [![Second Milestone](https://i.postimg.cc/RCgx25JY/Screenshot-2022-06-30-9-39-45-AM-1.png)](https://www.youtube.com/watch?v=pfuyu-g972Q "Second Milestone")
 
 # First Milestone 
+
+Diagrams from Lafvin
+
+![First Mileston Diagram](https://www.simpleimageresizer.com/_uploads/photos/05341bb2/diagram_1280x720.jpg)
+
+![First Mileston Diagram1](https://www.simpleimageresizer.com/_uploads/photos/05341bb2/diagram1_1280x720.jpg)
+
+
 My first milestone was finishing the body for the robotic arm and making and finishing all the wiring so that all the servos in the arm as well as the controller was connected to the robotic arm. I had to use a variety of screws, nuts, spacers and self locking nuts. I had a tough time using the self locking nut as I had initially not known that you need to use a plyer when using self locking nuts, but later realized that the self locking nuts were really convenient as they didn't get loosened when the parts were moving so nothing would fly off.
  
 [![First Milestone](https://i.postimg.cc/hPdZsLSj/Screenshot-2022-06-30-9-17-50-AM-1.png)](https://youtu.be/uQFWPI3eDoY "First Milestone")
